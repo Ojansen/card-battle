@@ -12,7 +12,6 @@ const cards: CardInterface[] = [
 		target: "enemy",
 		location: undefined,
 		rarity: "common",
-		price: 100,
 	},
 	{
 		uuid: crypto.randomUUID(),
@@ -25,7 +24,6 @@ const cards: CardInterface[] = [
 		target: "self",
 		location: undefined,
 		rarity: "common",
-		price: 100,
 	},
 	{
 		uuid: crypto.randomUUID(),
@@ -38,7 +36,6 @@ const cards: CardInterface[] = [
 		target: "enemy",
 		location: undefined,
 		rarity: "common",
-		price: 100,
 	},
 	{
 		uuid: crypto.randomUUID(),
@@ -51,7 +48,6 @@ const cards: CardInterface[] = [
 		target: "enemy",
 		location: undefined,
 		rarity: "common",
-		price: 100,
 	},
 ];
 

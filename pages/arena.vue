@@ -16,15 +16,13 @@
             <Graveyard />
 
             <!-- <CardPlayingDeck /> -->
-            <pre>{{ hand.copyDeck.value }}</pre>
+            <DeckActive />
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
 const game = useGame();
-const deck = usePlayerDeck();
-const hand = usePlayerHand();
 
 onMounted(() => {
 	game.startGame();

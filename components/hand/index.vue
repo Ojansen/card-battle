@@ -1,8 +1,8 @@
 <template>
     <div>
         <h2>Current hand</h2>
-        <div v-if="hand.currentHand.value.length">
-            <div v-for="(card, index) in hand.currentHand.value" :key="index">
+        <div v-if="deck.locationFilter('hand').length">
+            <div v-for="card in deck.locationFilter('hand')" :key="card.uuid">
                 <Card :card="card" />
                 <button type="button" @click="game.playCard(card)">Play</button>
             </div>
@@ -14,6 +14,6 @@
 </template>
 
 <script setup lang="ts">
-const hand = usePlayerHand();
+const deck = usePlayerDeck();
 const game = useGame();
 </script>

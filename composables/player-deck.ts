@@ -9,11 +9,9 @@ export const usePlayerDeck = () => {
 	}
 
 	function remove(card: CardInterface) {
-		const index = deck.value.findIndex((obj) => obj.id === card.id);
-		if (index !== -1) {
-			deck.value.splice(index, 1);
-			card.location = "collection";
-		}
+		deck.value = [...removeFromArray(deck.value, "uuid", card.uuid)];
+		// console.log(deck.value);
+		card.location = "collection";
 	}
 
 	function shuffle() {

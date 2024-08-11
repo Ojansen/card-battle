@@ -41,7 +41,6 @@ export interface ItemInterface {
 	buff?: CardInterface["type"];
 	debuff?: CardInterface["type"];
 	amount: number;
-	price: number;
 	location: "head" | "torso" | "weapon" | "hands";
 }
 
@@ -54,7 +53,6 @@ export interface CardInterface {
 	effect: "damage" | "mana" | "shield";
 	rarity: rarityType;
 	location?: "hand" | "deck" | "graveyard" | "collection";
-	price: number;
 	cost: number;
 	target: "self" | "enemy";
 }
