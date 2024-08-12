@@ -1,3 +1,5 @@
+import { useStorage } from "@vueuse/core";
+
 export const usePlayer = () => {
 	const baseStats = {
 		gold: 1000,
@@ -9,13 +11,13 @@ export const usePlayer = () => {
 		mana: 3,
 	};
 
-	const gold = useState("player-gold", () => baseStats.gold);
-	const keys = useState("player-keys", () => baseStats.keys);
-	const medals = useState("player-medals", () => baseStats.medals);
-	const health = useState("health", () => baseStats.health);
-	const attack = useState("attack", () => baseStats.attack);
-	const shield = useState("shield", () => baseStats.shield);
-	const mana = useState("mana", () => baseStats.mana);
+	const gold = useStorage('gold', ref(baseStats.gold));
+	const keys = useStorage('keys', ref(baseStats.keys));
+	const medals = useStorage('medals', ref(baseStats.medals));
+	const health = useStorage('health', ref(baseStats.health));
+	const attack = useStorage('attack', ref(baseStats.attack));
+	const shield = useStorage('shield', ref(baseStats.shield));
+	const mana = useStorage('mana', ref(baseStats.mana));
 
 	const inventory = usePlayerInventory();
 

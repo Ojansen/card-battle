@@ -1,6 +1,8 @@
 import type { ItemInterface } from "global";
 
 export const useItems = () => {
+	// const prisma = usePrismaClient();
+	// const items = await prisma.item.findMany();
 	const items: ItemInterface[] = [
 		{
 			id: 1,

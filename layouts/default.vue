@@ -1,29 +1,29 @@
 <template>
-    <div>
-        <nav>
-            <menu class="flex gap-2">
-                <li>
-                    <NuxtLink :to="{ name: 'index' }">Home</NuxtLink>
+    <div class="grid grid-rows-[min-content,auto] min-h-svh">
+        <nav class="bg-gray-100 mb-12">
+            <menu class="flex py-6 container jen flex-wrap">
+                <li class="py-4">
+                    <NuxtLink class="button button-link" :to="{ name: 'index' }">Home</NuxtLink>
                 </li>
-                <li>
-                    <NuxtLink :to="{ name: 'inventory' }">Inventory</NuxtLink>
+                <li class="py-4">
+                    <NuxtLink class="button" :to="{ name: 'inventory' }">Inventory</NuxtLink>
                 </li>
-                <li>
-                    <NuxtLink :to="{ name: 'store' }">Store</NuxtLink>
+                <li class="py-4">
+                    <NuxtLink class="button button-link" :to="{ name: 'store' }">Store</NuxtLink>
                 </li>
-                <li>
-                    <NuxtLink :to="{ name: 'arena' }">Arena</NuxtLink>
+                <li class="py-4">
+                    <NuxtLink class="button button-link" :to="{ name: 'arena' }">Arena</NuxtLink>
                 </li>
-                <li>
-                    <NuxtLink :to="{ name: 'collection' }">Collection</NuxtLink>
+                <li class="py-4">
+                    <NuxtLink class="button button-link" :to="{ name: 'collection' }">Collection</NuxtLink>
                 </li>
-                <li>
-                    <NuxtLink :to="{ name: 'deck' }">Deck</NuxtLink>
+                <li class="py-4">
+                    <NuxtLink class="button button-link" :to="{ name: 'deck' }">Deck</NuxtLink>
                 </li>
             </menu>
         </nav>
 
-        <main>
+        <main class="container">
             <slot />
         </main>
 

@@ -1,15 +1,14 @@
 import type { ItemInterface, PlayerInterface } from "global";
+import { useStorage } from "@vueuse/core";
 
 export const usePlayerInventory = () => {
-	const head = useState<ItemInterface | undefined>("head-equipment");
-	const torso = useState<ItemInterface | undefined>("torso-equipment");
-	const weapon = useState<ItemInterface | undefined>("weapon-equipment");
-	const hands = useState<ItemInterface | undefined>("hand-equipment");
+	
+	const head = useStorage('head-equipment', ref<ItemInterface | undefined>());
+	const torso = useStorage('torso-equipment', ref<ItemInterface | undefined>());
+	const weapon = useStorage('weapon-equipment', ref<ItemInterface | undefined>());
+	const hands = useStorage('hand-equipment', ref<ItemInterface | undefined>());
 
-	const inventoryItems = useState<ItemInterface[]>(
-		"player-inventory-items",
-		() => [],
-	);
+	const inventoryItems = useStorage("player-inventory-items", ref<ItemInterface[]>([]));
 
 	function equip(player: PlayerInterface, item: ItemInterface) {
 		switch (item.location) {

@@ -11,6 +11,7 @@
             </li>
             <li>
                 Health
+                <UiHealthbar :health="player.health.value" :max-health="player.maxHealth.value" />
                 {{ player.health }} - {{ player.maxHealth }}
             </li>
             <li>

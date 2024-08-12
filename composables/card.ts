@@ -5,7 +5,7 @@ const cards: CardInterface[] = [
 		uuid: crypto.randomUUID(),
 		id: 1,
 		name: "Quick attack",
-		desciption: "Quick before the enemy can attack",
+		desciption: "Quick before the enemy can <strong>attack</strong>",
 		type: "attack",
 		effect: "damage",
 		cost: 1,
@@ -29,7 +29,7 @@ const cards: CardInterface[] = [
 		uuid: crypto.randomUUID(),
 		id: 3,
 		name: "Lunge",
-		desciption: "",
+		desciption: "Lunge at the enemy with great strength",
 		type: "attack",
 		effect: "damage",
 		cost: 1,
@@ -41,13 +41,49 @@ const cards: CardInterface[] = [
 		uuid: crypto.randomUUID(),
 		id: 4,
 		name: "Lunge II",
-		desciption: "",
+		desciption: "Lunge at the enemy with great strength",
 		type: "attack",
 		effect: "damage",
 		cost: 1,
 		target: "enemy",
 		location: undefined,
-		rarity: "common",
+		rarity: "uncommon",
+	},
+	{
+		uuid: crypto.randomUUID(),
+		id: 5,
+		name: "Lunge III",
+		desciption: "Lunge at the enemy with great strength",
+		type: "attack",
+		effect: "damage",
+		cost: 1,
+		target: "enemy",
+		location: undefined,
+		rarity: "rare",
+	},
+	{
+		uuid: crypto.randomUUID(),
+		id: 4,
+		name: "Lunge IV",
+		desciption: "Lunge at the enemy with great strength",
+		type: "attack",
+		effect: "damage",
+		cost: 1,
+		target: "enemy",
+		location: undefined,
+		rarity: "epic",
+	},
+	{
+		uuid: crypto.randomUUID(),
+		id: 5,
+		name: "Lunge V",
+		desciption: "Lunge at the enemy with great strength",
+		type: "attack",
+		effect: "damage",
+		cost: 1,
+		target: "enemy",
+		location: undefined,
+		rarity: "legendary",
 	},
 ];
 
@@ -55,7 +91,6 @@ export const useCard = () => {
 	const cardList = useState("card-list", () => cards);
 	const enemy = useEnemy().currentEnemy;
 	const player = usePlayer();
-	const playerHand = usePlayerHand();
 
 	function playCard(selectedCard: CardInterface) {
 		return new Promise((resolve, reject) => {

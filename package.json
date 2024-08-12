@@ -1,23 +1,27 @@
 {
-	"name": "nuxt-app",
-	"private": true,
-	"type": "module",
-	"scripts": {
-		"build": "nuxt build",
-		"dev": "nuxt dev",
-		"generate": "nuxt generate",
-		"preview": "nuxt preview",
-		"postinstall": "nuxt prepare",
-		"lint": "biome format --write ./"
-	},
-	"dependencies": {
-		"@nuxtjs/tailwindcss": "latest",
-		"nuxt": "^3.12.4",
-		"vue": "latest"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "1.8.3",
-		"@vueuse/core": "^10.11.0",
-		"@vueuse/nuxt": "^10.11.0"
-	}
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "biome format --write ./",
+    "prisma:studio": "prisma studio",
+    "prisma:migrate": "prisma migrate dev"
+  },
+  "dependencies": {
+    "@nuxtjs/tailwindcss": "latest",
+    "@prisma/nuxt": "latest",
+    "nuxt": "^3.12.4",
+    "vue": "latest"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3",
+    "@prisma/client": "^5.18.0",
+    "@vueuse/core": "^10.11.1",
+    "@vueuse/nuxt": "^10.11.1"
+  }
 }

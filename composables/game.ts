@@ -27,7 +27,9 @@ export const useGame = () => {
 		phase.value = phases[nextIndex];
 	}
 
-	const isGameOver = computed(() => enemy.currentEnemy.value.health <= 0 || player.health.value <= 0);
+	const isGameOver = computed(
+		() => enemy.currentEnemy.value.health <= 0 || player.health.value <= 0,
+	);
 
 	watch(phase, async (newPhase) => {
 		console.log(newPhase);
@@ -108,7 +110,9 @@ export const useGame = () => {
 		}
 
 		if (deck.locationFilter("deck").length) {
-			const randomIndex = Math.floor(Math.random() * deck.locationFilter("deck").length);
+			const randomIndex = Math.floor(
+				Math.random() * deck.locationFilter("deck").length,
+			);
 			const drawnCard = deck.locationFilter("deck")[randomIndex];
 			if (drawnCard) {
 				drawnCard.location = "hand";
@@ -130,9 +134,9 @@ export const useGame = () => {
 		const result = await card.playCard(playedCard);
 		if (result) {
 			if (isGameOver.value) {
-				nextPhase('endGame');
+				nextPhase("endGame");
 			}
-			
+
 			playedCard.location = "graveyard";
 
 			if (deck.locationFilter("hand").length < 3) {
@@ -155,14 +159,14 @@ export const useGame = () => {
 	function endGame() {
 		for (let index = 0; index < deck.deck.value.length; index++) {
 			const element = deck.deck.value[index];
-			element.location = 'deck';
+			element.location = "deck";
 		}
 		player.reset();
 		enemy.reset();
 		alert(
 			`Game won gained ${lootbox.dropGold()} gold, defeated ${enemy.currentEnemy.value.name}`,
 		);
-		nextPhase('startGame');
+		nextPhase("startGame");
 	}
 
 	async function enemyTurn() {

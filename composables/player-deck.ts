@@ -1,7 +1,8 @@
 import type { CardInterface } from "global";
+import { useStorage } from "@vueuse/core";
 
 export const usePlayerDeck = () => {
-	const deck = useState<CardInterface[]>("player-deck", () => []);
+	const deck = useStorage('player-deck', ref<CardInterface[]>([]));
 
 	function add(card: CardInterface) {
 		deck.value.push(card);

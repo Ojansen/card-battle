@@ -3,6 +3,7 @@ import type { CardInterface, rarityType } from "global";
 export const useCurrency = () => {
 	const player = usePlayer();
 	const collection = useCollection();
+	
 	const prices: Record<rarityType, number> = {
 		common: 100,
 		uncommon: 200,
@@ -41,6 +42,7 @@ export const useCurrency = () => {
 	}
 
 	return {
+		prices,
 		buyKeys,
 		buyGold,
 		buyCard,

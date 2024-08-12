@@ -1,9 +1,11 @@
 <template>
     <div class="space-y-6">
-        <div>
+        <h2>Collection</h2>
+        <div class="flex gap-6 flex-wrap justify-evenly">
             <div v-for="card in collection.cards.value.filter((item: CardInterface) => item.location === 'collection')">
-                {{ card }}
-                <button type="button" @click="deck.add(card)">Add card</button>
+                <Card :card="card">
+                    <button class="button" type="button" @click="deck.add(card)">Add card</button>
+                </Card>
             </div>
         </div>
         <Deck />
